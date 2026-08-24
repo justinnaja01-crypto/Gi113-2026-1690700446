@@ -33,6 +33,10 @@ namespace Lab02
             Console.WriteLine($"Hp Percent:{hePercent}%");
             Console.WriteLine();
             Console.WriteLine("Kirin takes 60 damge!");
+            Console.WriteLine();
+            Console.WriteLine($"===== BOSS STATUS: AFTER DAMAGE =====");
+            Console.WriteLine($"Hp: {currentHp} / {maxHp}");
+            Console.WriteLine($"Hp percent: 47%");
         }
     }
 }
