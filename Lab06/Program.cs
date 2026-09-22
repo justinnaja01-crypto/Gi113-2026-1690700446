@@ -69,9 +69,64 @@ namespace Lab06
             //{
             //Console.WriteLine("The door stay closed.");
             //} 
-            int HeroHP = 150;
-            int Attack = 25;         
-            int SpecialAttack = 40;
+            int currentSp = 80;
+            int shadowsHp = 200;
+            int slashDamage = 35;
+            int agiDamage = 75;
+            int spRecovery = 30;
+
+            Console.WriteLine("====================================");
+            Console.WriteLine("        PERSONA 3 RELOAD           ");
+            Console.WriteLine("     Makoto Yuki vs Shadow         ");
+            Console.WriteLine("====================================");
+            Console.WriteLine("Action 1: Slash Attack (0 SP)");
+            Console.WriteLine("Action 2: Agi - Fire Skill (20 SP)");
+            Console.WriteLine("Action 3: Cadenza - SP Focus");
+            Console.WriteLine();
+
+            Console.Write("Choose your action (1-3): ");
+            bool validInput = int.TryParse(Console.ReadLine(), out int choice);
+
+            if (validInput == false || choice < 1 || choice > 3)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Invalid command. Please enter a valid action choice (1, 2, or 3).");
+            }
+            else if (choice == 1)
+            {
+                shadowsHp -= slashDamage;
+
+                Console.WriteLine();
+                Console.WriteLine("Makoto Yuki executed Slash Attack!");
+                Console.WriteLine($"Shadow took {slashDamage} physical damage. Target HP is now {shadowsHp}.");
+            }
+            else if (choice == 2)
+            {
+                shadowsHp -= agiDamage;
+                currentSp -= 20;
+
+                Console.WriteLine();
+                Console.WriteLine("Makoto Yuki cast Agi!");
+                Console.WriteLine($"Shadow took {agiDamage} fire damage. Target HP is now {shadowsHp}.");
+                Console.WriteLine($"Your remaining SP is {currentSp}.");
+            }
+            else
+            {
+                currentSp += spRecovery;
+
+                Console.WriteLine();
+                Console.WriteLine("Makoto Yuki used Cadenza SP Focus!");
+                Console.WriteLine($"Recovered SP! Your current SP is now {currentSp}.");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("====================================");
+            Console.WriteLine("             TURN END               ");
+            Console.WriteLine("====================================");
+            Console.WriteLine($"Current SP  : {currentSp}");
+            Console.WriteLine($"Shadow HP   : {shadowsHp}");
+            Console.WriteLine("====================================");
+
         }
     }
 }
