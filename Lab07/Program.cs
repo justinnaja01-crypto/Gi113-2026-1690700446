@@ -105,6 +105,7 @@ namespace Lab07
             Console.WriteLine("5) Run");
             Console.WriteLine("Choose (1-5): ");
             int.TryParse(Console.ReadLine(), out int command2);
+            Console.WriteLine();
             switch (command2)
             {
                 case 1:
