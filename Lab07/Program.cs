@@ -88,6 +88,7 @@ namespace Lab07
 
             //plan B
             Console.ForegroundColor = ConsoleColor.DarkBlue;
+
             const int ShadowHp2 = 500;
 
             Console.WriteLine("Shadow defense: ");
