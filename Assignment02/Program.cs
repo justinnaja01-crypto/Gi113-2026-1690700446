@@ -18,21 +18,26 @@ namespace Assignment02
             const double maxBatch = 1000.00;
             var inGot = 0.0;
             var ore = 0.0;
-            Console.WriteLine("=======The Forge=======");
-            Console.WriteLine("---Special ore today---");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("=========================================");
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("=========Welcome to the forge============");
+            Console.WriteLine("----------Limited edition ore-----------");
             Console.WriteLine($"{name} ore Smelting 0.25 / Salvage 0.40");
             Console.WriteLine("Key 'S' for Smelt (Ore -> Ingot)");
             Console.WriteLine("Key 'B' for Breakdown (Ingot -> Ore)");
-            Console.WriteLine("vvvvvvvvvvvvvvvvvvvvvv");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("=========================================");
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.Write("What you want to do : ");
             bool iskeychar = char.TryParse(Console.ReadLine(), out char key);
 
-            if (!iskeychar || (key != 's' && key != 'S' && key != 'b' && key != 'B'))
+            if (!iskeychar || (key != 'S' && key != 'B'))
             {
-                Console.WriteLine("error : plese text (s , S , B ,b)");
+                Console.WriteLine("error : Enter (S , B )");
             }
 
-            else if (key == 'S' || key == 's')
+            else if (key == 'S' )
             {
                 Console.Write("How much do you want to Smelt (1-1000): ");
                 bool isamountnum = double.TryParse(Console.ReadLine(), out double amount);
@@ -58,7 +63,7 @@ namespace Assignment02
                 }
 
             }
-            else if (key == 'B' || key == 'b')
+            else if (key == 'B' )
             {
                 Console.Write("How much do you want to Breakdown ( 1-1000 ): ");
                 bool isamountnum = double.TryParse(Console.ReadLine(), out double amount);
