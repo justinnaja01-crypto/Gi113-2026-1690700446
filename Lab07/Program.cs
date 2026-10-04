@@ -127,6 +127,7 @@ namespace Lab07
                 default:
                     Console.WriteLine("You hesitate. Invalid command!");
                     break;
+                    Console.WriteLine();
             }
             int power2 = command2 switch
             {
